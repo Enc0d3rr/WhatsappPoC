@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simulador de Ingeniería Social en WhatsApp</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
       background-color: #e5ddd5;
       display: flex;
       flex-direction: column;
@@ -14,52 +16,87 @@
       justify-content: center;
       min-height: 100vh;
       padding: 20px;
+      margin: 0;
     }
+
     .chat-box {
       background-color: #fff;
-      border-radius: 10px;
+      border-radius: 15px;
       padding: 20px;
       width: 100%;
       max-width: 500px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      animation: fadeIn 1.2s ease-in-out;
     }
+
     .msg {
       background-color: #dcf8c6;
-      border-radius: 10px;
+      border-radius: 10px 10px 10px 0;
       padding: 15px;
       margin-bottom: 20px;
       display: flex;
       align-items: center;
       gap: 10px;
+      animation: slideUp 0.7s ease-in-out;
     }
+
     .msg img {
       border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      border: 2px solid #25D366;
     }
+
     .msg-content {
       flex: 1;
     }
+
     button {
       background-color: #25D366;
       color: white;
       border: none;
       padding: 10px 20px;
-      border-radius: 5px;
+      border-radius: 20px;
       font-size: 16px;
       cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: background-color 0.3s;
     }
+
+    button:hover {
+      background-color: #1ebc59;
+    }
+
     #info {
       margin-top: 20px;
-      background-color: #ffeeba;
-      padding: 15px;
-      border-radius: 5px;
+      background-color: #fff3cd;
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 5px solid #ffc107;
       display: none;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    #info h3 {
+      margin-top: 0;
+      color: #856404;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
   <div class="chat-box">
     <div class="msg">
-      <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Foto de perfil" width="50" height="50">
+      <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Foto de perfil">
       <div class="msg-content">
         <strong>Juan Pérez</strong> ha compartido un grupo contigo.<br>
         <button onclick="simularAtaque()">UNIRME</button>
@@ -67,14 +104,19 @@
     </div>
     <div id="info">
       <h3>¡Cuenta comprometida! (Simulación)</h3>
-      <p>Esto es lo que un atacante podría obtener:</p>
+      <p>Esto es lo que un atacante podría obtener si este fuera un ataque real:</p>
       <ul>
         <li>Acceso al número de teléfono</li>
         <li>Token de sesión de WhatsApp</li>
-        <li>Acceso a conversaciones</li>
-        <li>Suplantación de identidad</li>
+        <li>Lectura de conversaciones privadas</li>
+        <li>Envío de mensajes como si fueras tú</li>
       </ul>
-      <p><strong>Prevención:</strong> Nunca pulses enlaces sospechosos. Activa la verificación en dos pasos.</p>
+      <p><strong>¿Cómo prevenirlo?</strong></p>
+      <ul>
+        <li>No abras enlaces o botones de procedencia dudosa</li>
+        <li>Activa la verificación en dos pasos en WhatsApp</li>
+        <li>Educa a tu familia y contactos sobre ingeniería social</li>
+      </ul>
     </div>
   </div>
 
@@ -85,4 +127,3 @@
   </script>
 </body>
 </html>
-
