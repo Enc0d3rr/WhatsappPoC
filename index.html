@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Ingeniería Social en WhatsApp</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e5ddd5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .chat-box {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .msg {
+      background-color: #dcf8c6;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .msg img {
+      border-radius: 50%;
+    }
+    .msg-content {
+      flex: 1;
+    }
+    button {
+      background-color: #25D366;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #info {
+      margin-top: 20px;
+      background-color: #ffeeba;
+      padding: 15px;
+      border-radius: 5px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-box">
+    <div class="msg">
+      <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Foto de perfil" width="50" height="50">
+      <div class="msg-content">
+        <strong>Juan Pérez</strong> ha compartido un grupo contigo.<br>
+        <button onclick="simularAtaque()">UNIRME</button>
+      </div>
+    </div>
+    <div id="info">
+      <h3>¡Cuenta comprometida! (Simulación)</h3>
+      <p>Esto es lo que un atacante podría obtener:</p>
+      <ul>
+        <li>Acceso al número de teléfono</li>
+        <li>Token de sesión de WhatsApp</li>
+        <li>Acceso a conversaciones</li>
+        <li>Suplantación de identidad</li>
+      </ul>
+      <p><strong>Prevención:</strong> Nunca pulses enlaces sospechosos. Activa la verificación en dos pasos.</p>
+    </div>
+  </div>
+
+  <script>
+    function simularAtaque() {
+      document.getElementById("info").style.display = "block";
+    }
+  </script>
+</body>
+</html>
+
